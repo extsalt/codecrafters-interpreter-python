@@ -32,10 +32,10 @@ def main():
             else:
                 print("SLASH / null")
         elif c == "  ":
-            i += 1
+            i = i + 1
             continue
         elif c == "\t":
-              i += 1
+              i = i + 1
               continue
         elif c == '(':
             print("LEFT_PAREN ( null")
