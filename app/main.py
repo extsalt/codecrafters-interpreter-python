@@ -34,7 +34,7 @@ def main():
         if c == "+":
             print("PLUS + null")
         if c == ";":
-            print("SEMI_COLON ; null")
+            print("SEMICOLON ; null")
         if c == "*":
             print("STAR * null")
     print("EOF  null")
