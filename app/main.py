@@ -75,7 +75,7 @@ def main():
                 i += 1  # Skip the next character as it is part of the '!='
             else:
                 print("BANG ! null")
-        elif c in [" ", "\t"]:
+        elif c in [" ", "\t", "\n"]:
             pass
         else:
             # Handle unexpected characters
