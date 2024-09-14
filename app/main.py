@@ -35,8 +35,8 @@ def main():
             i = i + 1
             continue
         elif c == "\t":
-              i = i + 1
-              continue
+            i = i + 1
+            continue
         elif c == '(':
             print("LEFT_PAREN ( null")
         elif c == ')':
