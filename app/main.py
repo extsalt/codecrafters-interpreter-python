@@ -22,8 +22,16 @@ def main():
 
     while i < length:
         c = file_contents[i]
-
-        if c == '(':
+        if c == '/':
+            if i + 1 < length and file_contents[i + 1] == '/':
+                # Skip the rest of the line for a comment
+                i += 2
+                while i < length and file_contents[i] != '\n':
+                    i += 1
+                continue
+            else:
+                print("SLASH / null")
+        elif c == '(':
             print("LEFT_PAREN ( null")
         elif c == ')':
             print("RIGHT_PAREN ) null")
