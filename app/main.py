@@ -8,7 +8,6 @@ def main():
 
     command = sys.argv[1]
     filename = sys.argv[2]
-    error = False
 
     if command != "tokenize":
         print(f"Unknown command: {command}", file=sys.stderr)
@@ -17,44 +16,47 @@ def main():
     with open(filename) as file:
         file_contents = file.read()
 
-    for c in file_contents:
-        if c == "(":
+    i = 0
+    error = False
+    length = len(file_contents)
+
+    while i < length:
+        c = file_contents[i]
+
+        if c == '(':
             print("LEFT_PAREN ( null")
-            continue
-        if c == ")":
+        elif c == ')':
             print("RIGHT_PAREN ) null")
-            continue
-        if c == '{':
+        elif c == '{':
             print("LEFT_BRACE { null")
-            continue
-        if c == '}':
+        elif c == '}':
             print("RIGHT_BRACE } null")
-            continue
-        if c == ",":
-             print("COMMA , null")
-             continue
-        if c == ".":
+        elif c == ',':
+            print("COMMA , null")
+        elif c == '.':
             print("DOT . null")
-            continue
-        if c == "-":
-             print("MINUS - null")
-             continue
-        if c == "+":
+        elif c == '-':
+            print("MINUS - null")
+        elif c == '+':
             print("PLUS + null")
-            continue
-        if c == ";":
+        elif c == ';':
             print("SEMICOLON ; null")
-            continue
-        if c == "*":
+        elif c == '*':
             print("STAR * null")
-            continue
+        elif c == '=':
+            if i + 1 < length and file_contents[i + 1] == '=':
+                print("EQUALS == null")
+                i += 1  # Skip the next character as it is part of the '=='
+            else:
+                print("ASSIGNMENT = null")
         else:
+            # Handle unexpected characters
             error = True
-            line_number = file_contents.count("\n", 0, file_contents.find(c)) + 1
-            print(
-                "[line %s] Error: Unexpected character: %s" % (line_number, c),
-                file=sys.stderr,
-            )
+            line_number = file_contents.count("\n", 0, i) + 1
+            print(f"[line {line_number}] Error: Unexpected character: {c}", file=sys.stderr)
+
+        i += 1
+
     print("EOF  null")
     if error:
         exit(65)
