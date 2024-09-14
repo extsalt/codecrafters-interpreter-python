@@ -25,6 +25,18 @@ def main():
             print("LEFT_BRACE { null")
         if c == '}':
             print("RIGHT_BRACE } null")
+        if ",":
+             print("COMMA , null")
+        if ".":
+            print("DOT . null")
+        if "-":
+             print("MINUS - null")
+        if "+":
+            print("PLUS + null")
+        if ";":
+            print("SEMI_COLON ; null")
+        if "*":
+            print("STAR * null")
     print("EOF  null")
 
 
