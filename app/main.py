@@ -45,10 +45,10 @@ def main():
             print("STAR * null")
         elif c == '=':
             if i + 1 < length and file_contents[i + 1] == '=':
-                print("EQUAL_WQUAL == null")
+                print("EQUAL_EQUAL == null")
                 i += 1  # Skip the next character as it is part of the '=='
             else:
-                print("ASSIGNMENT = null")
+                print("EQUAL = null")
         else:
             # Handle unexpected characters
             error = True
