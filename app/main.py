@@ -31,12 +31,6 @@ def main():
                 continue
             else:
                 print("SLASH / null")
-        elif c == " ":
-            i = i + 1
-            continue
-        elif c == "\t":
-            i = i + 1
-            continue
         elif c == '(':
             print("LEFT_PAREN ( null")
         elif c == ')':
@@ -81,6 +75,10 @@ def main():
                 i += 1  # Skip the next character as it is part of the '!='
             else:
                 print("BANG ! null")
+        elif c == " ":
+            pass
+        elif c == "\t":
+            pass
         else:
             # Handle unexpected characters
             error = True
