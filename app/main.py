@@ -20,24 +20,34 @@ def main():
     for c in file_contents:
         if c == "(":
             print("LEFT_PAREN ( null")
+            continue
         if c == ")":
             print("RIGHT_PAREN ) null")
+            continue
         if c == '{':
             print("LEFT_BRACE { null")
+            continue
         if c == '}':
             print("RIGHT_BRACE } null")
+            continue
         if c == ",":
              print("COMMA , null")
+             continue
         if c == ".":
             print("DOT . null")
+            continue
         if c == "-":
              print("MINUS - null")
+             continue
         if c == "+":
             print("PLUS + null")
+            continue
         if c == ";":
             print("SEMICOLON ; null")
+            continue
         if c == "*":
             print("STAR * null")
+            continue
         else:
             error = True
             line_number = file_contents.count("\n", 0, file_contents.find(c)) + 1
