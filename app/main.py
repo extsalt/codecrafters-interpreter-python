@@ -43,6 +43,18 @@ def main():
             print("SEMICOLON ; null")
         elif c == '*':
             print("STAR * null")
+        elif c == '<':
+            if i + 1 < length and file_contents[i + 1] == '=':
+                print("LESS_EQUAL <= null")
+                i += 1  # Skip the next character as it is part of the '=='
+            else:
+                print("LESS < null")
+        elif c == '>':
+            if i + 1 < length and file_contents[i + 1] == '=':
+                print("GREATER_EQUAL >= null")
+                i += 1  # Skip the next character as it is part of the '=='
+            else:
+                print("GREATER > null")
         elif c == '=':
             if i + 1 < length and file_contents[i + 1] == '=':
                 print("EQUAL_EQUAL == null")
