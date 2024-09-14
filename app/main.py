@@ -31,7 +31,7 @@ def main():
                 continue
             else:
                 print("SLASH / null")
-        elif c == "  ":
+        elif c == " ":
             i = i + 1
             continue
         elif c == "\t":
