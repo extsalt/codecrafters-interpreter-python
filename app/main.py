@@ -8,6 +8,7 @@ def main():
 
     command = sys.argv[1]
     filename = sys.argv[2]
+    error = False
 
     if command != "tokenize":
         print(f"Unknown command: {command}", file=sys.stderr)
@@ -37,7 +38,18 @@ def main():
             print("SEMICOLON ; null")
         if c == "*":
             print("STAR * null")
+        else:
+            error = True
+            line_number = file_contents.count("\n", 0, file_contents.find(c)) + 1
+            print(
+                "[line %s] Error: Unexpected character: %s" % (line_number, c),
+                file=sys.stderr,
+            )
     print("EOF  null")
+    if error:
+        exit(65)
+    else:
+        exit(0)
 
 
 if __name__ == "__main__":
